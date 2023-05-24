@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PhoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::get('user/{id}', [UserController::class, 'show']);
     Route::put('user/update/{id}', [UserController::class, 'update']);
     Route::delete('user/delete/{id}', [UserController::class, 'destroy']);
+
+
+    Route::get('phones', [PhoneController::class, 'index']);
+    Route::get('userphone', [PhoneController::class, 'show']);
+
 
