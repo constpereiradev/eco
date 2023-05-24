@@ -1,7 +1,6 @@
 
-# laravel10-crud-api
-A Laravel 10 crud api. Updates coming soon.
-=======
+# Laravel 10 crud api 
+<p>Updates coming soon.</p>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -14,13 +13,32 @@ A Laravel 10 crud api. Updates coming soon.
 ## About the project
 CRUD User API made with Laravel 10, so i can practice my knowledges.
 
-## How to use it
-* Install Laravel
-* Clone the project.
-* Go to my Postman project and copy the endpoints.
-* Start Php artisan serve
-* Enjoy it!
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
 
 
+* Php
+* Laravel
+* Postman (for endpoint testing)
+
+### Step by step
+
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/constpereiradev/laravel10-crud-api.git
+   ```
+2. Go to my Postman Workspace and use the endpoints
+   ```sh
+   https://www.postman.com/martian-firefly-354203/workspace/laravel-10-crud-api
+   ```
+3. Start Php artisan serve
+   ```sh
+   php artisan serve
+   ```
+4. Enjoy it!
 
 
