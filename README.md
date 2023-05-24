@@ -1,6 +1,5 @@
 
 # Laravel 10 crud api 
-<p>Updates coming soon.</p>
 <p align="center">
     <img src="images/api-logo.png" width="225" height="150">
 </p>
