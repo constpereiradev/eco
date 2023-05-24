@@ -93,7 +93,6 @@ class UserController extends Controller
             'Status' => $statusCode,
             'Message' => $message,
             'Phone' => $user->phone,
-            'Posts' => $user->post,
             
         ];
 
@@ -118,11 +117,10 @@ class UserController extends Controller
                 'phone' => $request->phone
             ]);
 
-            $user->post()->update([
-                'posts' => $request->post
+            $user->posts()->update([
+                'post' => $request->post
             ]);
             
-
             if ($user->save()){
 
                 $statusCode = 200;
@@ -139,7 +137,7 @@ class UserController extends Controller
                 'Status' => $statusCode,
                 'Message' => $message,
                 'Phone' => $user->phone,
-                'Posts' => $user->post,
+                'Posts' => $user->posts,
               
             ];
     
