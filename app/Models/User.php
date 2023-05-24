@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Phone;
 use App\Models\Post;
+use App\Models\Bio;
+
 
 class User extends Authenticatable
 {
@@ -62,5 +64,11 @@ class User extends Authenticatable
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
+    }
+
+    //A user has a bio
+    public function bio(): hasOne
+    {
+        return $this->hasOne(Bio::class);
     }
 }

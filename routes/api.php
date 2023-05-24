@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PhoneController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::get('userphone', [PhoneController::class, 'show']);
 
 
-    Route::post('user/post/create/{id}', [UserController::class, 'createNewPost']);
+    Route::get('posts', [PostController::class, 'index']);
+    Route::post('user/post/create/{id}', [PostController::class, 'store']);
+    Route::put('user/{user_id}/post/update/{post_id}', [PostController::class, 'update']);
+    Route::get('user/{user_id}/post/{post_id}', [PostController::class, 'show']);
+    Route::delete('user/{user_id}/post/{post_id}/delete', [PostController::class, 'destroy']);
