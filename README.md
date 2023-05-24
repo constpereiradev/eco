@@ -12,7 +12,7 @@ CRUD User API made with Laravel 10.
 * You can create, read, update and delete users - CRUD;
 * You can add a phone number to a user - One To One relationship;
 * You can create posts indicating the user id you want to - One To Many relationship;
-* You can create, cead, update and delete user posts - CRUD;
+* You can create, read, update and delete user posts - CRUD;
 * You can put a user bio;
 
 <div align="center">
