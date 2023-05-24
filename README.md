@@ -2,19 +2,14 @@
 # Laravel 10 crud api 
 <p>Updates coming soon.</p>
 <p align="center">
-    <img src="images/api-logo.png">
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img src="images/api-logo.png" width="225" height="150">
 </p>
-<div align="center">
     
 ## About the project
-CRUD User API made with Laravel 10, so i can practice my knowledges.
+CRUD User API made with Laravel 10.
 
-<img src="images/postman.png" alt="Postman" width="350" height="280">
+<div align="center">
+<img src="images/postman.png" alt="Postman" width="350" height="270">
 </div>
 
 
