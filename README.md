@@ -54,4 +54,4 @@ To get a local copy up and running follow these simple example steps.
 
 # Contact me!
 <p>Feel free to ask me anything and share your knowledge.</p>
-### amandapereiradevcontact@gmail.com
+✉️ amandapereiradevcontact@gmail.com
