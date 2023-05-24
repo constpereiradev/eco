@@ -17,4 +17,7 @@ class PhoneController extends Controller
         
     }
 
+    public function show(){
+
+    }
 }

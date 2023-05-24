@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\Phone;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Phone;
+use App\Models\Post;
 
 class User extends Authenticatable
 {
@@ -35,6 +37,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $attributes = [
+        'email' => 'email@gmail.com',
+    ];
+
     /**
      * The attributes that should be cast.
      *
@@ -52,5 +58,9 @@ class User extends Authenticatable
         return $this->hasOne(Phone::class);
     }
 
-    //A user has a address (soon)
+    //A user has many posts
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
 }

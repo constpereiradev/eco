@@ -32,3 +32,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::get('userphone', [PhoneController::class, 'show']);
 
 
+    Route::post('user/post/create/{id}', [UserController::class, 'createNewPost']);
