@@ -21,20 +21,27 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::controller(UserController::class)->group(function () {
 
-    Route::get('users', [UserController::class, 'index']);
-    Route::post('user/create', [UserController::class, 'store'])->name('user.create');
-    Route::get('user/{id}', [UserController::class, 'show']);
-    Route::put('user/update/{id}', [UserController::class, 'update']);
-    Route::delete('user/delete/{id}', [UserController::class, 'destroy']);
+    Route::get('users', 'index');
+    Route::post('user/create', 'store');
+    Route::get('user/{id}', 'show');
+    Route::put('user/update/{id}', 'update');
+    Route::delete('user/delete/{id}', 'destroy');
+});
 
+Route::controller(PhoneController::class)->group(function () {
 
-    Route::get('phones', [PhoneController::class, 'index']);
-    Route::get('userphone', [PhoneController::class, 'show']);
+    Route::get('phones', 'index');
+    Route::get('userphone', 'show');
+});
 
+Route::controller(PhoneController::class)->group(function () {
 
-    Route::get('posts', [PostController::class, 'index']);
-    Route::post('user/post/create/{id}', [PostController::class, 'store']);
-    Route::put('user/{user_id}/post/update/{post_id}', [PostController::class, 'update']);
-    Route::get('user/{user_id}/post/{post_id}', [PostController::class, 'show']);
-    Route::delete('user/{user_id}/post/{post_id}/delete', [PostController::class, 'destroy']);
+    Route::get('posts', 'index');
+    Route::post('user/post/create/{id}', 'store');
+    Route::put('user/{user_id}/post/update/{post_id}', 'update');
+    Route::get('user/{user_id}/post/{post_id}', 'show');
+    Route::delete('user/{user_id}/post/{post_id}/delete', 'destroy');
+
+}); 

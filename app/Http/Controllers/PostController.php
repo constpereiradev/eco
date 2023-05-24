@@ -103,5 +103,7 @@ class PostController extends Controller
         $post = $user->posts()->find($post_id);
 
         $post->delete();
+
+        return response()->json('Success!', 200);
     }
 }

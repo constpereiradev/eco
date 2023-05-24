@@ -70,7 +70,6 @@ class UserController extends Controller
             'Message: ' => $message,
             'Phone: ' => $phone,
             'Posts: ' => $post,
-            'Bio: ' => $user->bio,
         ];
 
         return response()
