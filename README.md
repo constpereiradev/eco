@@ -2,7 +2,7 @@
 # Laravel 10 crud api 
 <p>Updates coming soon.</p>
 <p align="center">
-    <img src="images/logo.png">
+    <img src="images/api-logo.png">
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
