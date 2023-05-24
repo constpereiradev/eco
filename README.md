@@ -20,6 +20,8 @@ CRUD User API made with Laravel 10.
 ## Next updates
 * Read, update and delete posts;
 * User bio option;
+* Documentation;
+* FrontEnd Design;
 
 ## Getting Started
 
