@@ -7,6 +7,10 @@ use App\Models\User;
 use App\Models\Phone;
 use App\Models\Post;
 use App\Models\Bio;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -36,10 +40,36 @@ class UserController extends Controller
         ->json([$headers]);
     }
 
+    public function login(): view{
+
+        return view('login');
+    }
+
+    public function authenticate(Request $request): RedirectResponse
+    {
+        $credentials = $request->validate([
+            'email' => ['email', 'required'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+
+            $request->session()->regenerate();
+            
+            return redirect()->intended('/welcome');
+        }
+        
+        return back()->withErrors([
+            'email' => 'incorrect email',
+            'password' => 'incorrect password',
+        ]);
+    }
+
 
     public function store(Request $request){
 
         $user = User::create($request->all());
+        
         
         $phone = $user->phone()->create([
             'phone' => $request->phone,
@@ -117,6 +147,10 @@ class UserController extends Controller
             $user->name = $input['name'];
             $user->email = $input['email'];
             $user->password = $input['password'];
+
+            $request->user()->fill([
+                'password' => Hash::make($request->newPassword)
+            ])->save();
     
             $user->phone()->update([
                 'phone' => $request->phone

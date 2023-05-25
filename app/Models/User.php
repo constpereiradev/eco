@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Phone;
 use App\Models\Post;
 use App\Models\Bio;
-
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
