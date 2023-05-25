@@ -21,8 +21,10 @@ CRUD User API made with Laravel 10.
 
 ## Next updates
 
-* Documentation;
 * FrontEnd Design;
+* Documentation;
+* Photo profile;
+* Header profile;
 
 ## Getting Started
 
