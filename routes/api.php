@@ -39,7 +39,7 @@ Route::controller(PhoneController::class)->group(function () {
 Route::controller(PostController::class)->group(function () {
 
     Route::get('posts', 'index');
-    Route::post('user/post/create/{id}', 'store');
+    Route::post('user/post/create/{id}', 'store')->name('post.store');
     Route::put('user/{user_id}/post/update/{post_id}', 'update');
     Route::get('user/{user_id}/post/{post_id}', 'show');
     Route::delete('user/{user_id}/post/{post_id}/delete', 'destroy');

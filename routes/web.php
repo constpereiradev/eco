@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -23,6 +25,19 @@ Route::get('/home', function () {
 });
 
 
-Route::post('/auth', [UserController::class, 'authenticate'])->name('auth');
-Route::get('/login', [UserController::class, 'login'])->name('login');
-Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+Route::controller(AccountController::class)->group(function () {
+
+    Route::post('/auth', 'authenticate')->name('auth');
+    Route::get('/login', 'login')->name('login');
+    Route::get('/profile', 'profile')->name('profile');
+    Route::post('/logout', 'logout')->name('logout');
+    Route::get('/home', 'home')->name('home');
+
+}); 
+
+Route::controller(PostController::class)->group(function () {
+
+    Route::post('user/post/create/{id}', 'create')->name('post.create');
+
+}); 
+

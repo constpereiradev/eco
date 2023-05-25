@@ -40,39 +40,6 @@ class UserController extends Controller
         ->json([$headers]);
     }
 
-    public function login(): view{
-
-        return view('login');
-    }
-
-    public function authenticate(Request $request): RedirectResponse
-    {
-        $credentials = $request->validate([
-            'email' => ['email', 'required'],
-            'password' => ['required'],
-        ]);
-
-        if (Auth::attempt($credentials)) {
-
-            //user data
-            $user = Auth::user();
-
-            $request->session()->regenerate();
-            return redirect()->intended('/home')->with('user', $user);
-        }
-        
-        return back()->withErrors([
-            'email' => 'incorrect email',
-            'password' => 'incorrect password',
-        ]);
-    }
-
-    public function profile(): View
-    {
-        return view('profile');
-    }
-
-
     public function store(Request $request){
 
         $user = User::create($request->all());

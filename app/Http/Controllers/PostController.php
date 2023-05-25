@@ -16,12 +16,34 @@ class PostController extends Controller
         return response()->json([$posts]);
     }
 
+    public function create(Request $request, string $id){
+
+        $user = User::with('phone', 'posts')->find($id);
+        //$phone = $user->phone;
+
+        $post = $user->posts()->create([
+            'post' => $request['post'],
+        ]);
+
+        if ($post->save()){
+
+            return redirect('home');
+            
+        } else {
+
+            return 'error!';
+        }
+
+        
+
+    }
+
 
 
     public function store(Request $request, string $id){
 
         $user = User::with('phone', 'posts')->find($id);
-        $phone = $user->phone;
+        //$phone = $user->phone;
 
         $post = $user->posts()->create([
             'post' => $request['post'],
@@ -42,7 +64,7 @@ class PostController extends Controller
             'User' => $user,
             'Status' => $statusCode,
             'Message' => $message,
-            'Phone:' => $phone,
+            //'Phone:' => $phone,
             'Posts:' => $post,
         ];
 

@@ -1,4 +1,12 @@
+@include ('layout.header')
+
 <h1>Profile</h1>
+
+<form action="{{ route ('logout')}}" method="post">
+ @csrf
+
+ <button type="submit">Logout</button>
+</form>
 
 Name: {{Auth::user()->name}}
 <br>
