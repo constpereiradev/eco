@@ -54,15 +54,22 @@ class UserController extends Controller
 
         if (Auth::attempt($credentials)) {
 
+            //user data
+            $user = Auth::user();
+
             $request->session()->regenerate();
-            
-            return redirect()->intended('/welcome');
+            return redirect()->intended('/home')->with('user', $user);
         }
         
         return back()->withErrors([
             'email' => 'incorrect email',
             'password' => 'incorrect password',
         ]);
+    }
+
+    public function profile(): View
+    {
+        return view('profile');
     }
 
 
@@ -148,10 +155,6 @@ class UserController extends Controller
             $user->email = $input['email'];
             $user->password = $input['password'];
 
-            $request->user()->fill([
-                'password' => Hash::make($request->newPassword)
-            ])->save();
-    
             $user->phone()->update([
                 'phone' => $request->phone
             ]);

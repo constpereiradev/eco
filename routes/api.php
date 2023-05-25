@@ -36,7 +36,7 @@ Route::controller(PhoneController::class)->group(function () {
     Route::get('userphone', 'show');
 });
 
-Route::controller(PhoneController::class)->group(function () {
+Route::controller(PostController::class)->group(function () {
 
     Route::get('posts', 'index');
     Route::post('user/post/create/{id}', 'store');

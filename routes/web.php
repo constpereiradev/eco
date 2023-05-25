@@ -14,9 +14,15 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
+
 Route::post('/auth', [UserController::class, 'authenticate'])->name('auth');
 Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
