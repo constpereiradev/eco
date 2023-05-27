@@ -42,36 +42,124 @@
 }
 
 .createpost {
-    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    width: 100%;
+
+    margin-bottom: 50px;
+}
+
+.createpost .post{
     height: 200px;
     width: 100%;
     display: flex;
     flex-direction: column;
 
+
 }
 
-.createpost input {
+.createpost .post textarea {
     height: 150px;
-    width: 90%;
+    width: 85%;
     margin: 20px 0px 0px 30px;
     border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+    resize: none;
 }
 
-.createpost button {
-    width: 200px;
-    height: 40px;
+.createpost .post textarea::-webkit-input-placeholder {
+    font-size: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
     
 }
 
-.post {
+.createpost .post:focus {
+    border: none;
+    outline: none;
+}
+
+
+.createpost .post button {
+    width: 200px;
+    height: 60px;
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.createpost .post button:hover {
+    transition: 0.5s;
+    background-color: rgb(59, 59, 59);
+
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.user-post {
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
 
+    width: 60%;
+    height: 100px;
+    border-radius: 10px;
+
+    color: black;
+    border: solid grey 1px;
+    margin: 10px;
+    padding: 20px;
+
+}
+
+.profile {
     background-color: grey;
+    width: 100%;
+    height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.profile .bio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+}
+
+.bio p {
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.bio button {
+    width: 120px;
+    height: 30px;
+    background-color: black;
     color: white;
-    margin: 20px 0px 20px 300px;
-    height: 60px;
-    width: 50%;
+    border-radius: 10px;
+    border: none;
+}
+
+.bio button:hover {
+    transition: 0.5s;
+    background-color: rgb(59, 59, 59);
+
 }

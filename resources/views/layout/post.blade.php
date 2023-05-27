@@ -1,12 +1,12 @@
-
-@foreach (Auth::user()->posts as $post)
-
-    <div class="post">
-        <div class="text">
-            <p>{{$post->post}}</p>
-            <p>{{ $post->created_at}}</p>
-        </div>
+<div class="posts">
         
-    </div>
+    @foreach (Auth::user()->posts as $post)
+
+            <div class="user-post">
+                <p>{{$post->post}}</p>
+                <p>{{ $post->created_at}}</p>
+            </div>
    
-@endforeach
+    @endforeach
+
+</div>

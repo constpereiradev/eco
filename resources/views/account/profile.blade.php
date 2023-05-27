@@ -1,22 +1,21 @@
 @include ('layout.header')
 
-<h1>Profile</h1>
 
-<form action="{{ route ('logout')}}" method="post">
- @csrf
 
- <button type="submit">Logout</button>
-</form>
+<div class="profile">
 
-Name: {{Auth::user()->name}}
-<br>
-Posts: <br>
-@foreach (Auth::user()->posts as $post)
-    <ul>
-        <li>
-            {{$post->post}}
-        </li>
+    <h1 id="name">{{ Auth::user()->name }}</h1>
+
+    <div class="bio">
+
+        <p> {{ Auth::user()->bio->bio }} </p>
+
+        <button>Edit bio</button>
+    </div>
+
     
-    </ul>
+</div>
 
-@endforeach
+@include ('layout.createpost')
+
+@include ('layout.post')
