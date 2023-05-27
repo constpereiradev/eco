@@ -10,7 +10,7 @@
     <header class="header">
         <div class="nav">
             <ul>
-                <li><a href="home">home</a></li>
+                <li><a href="home"><button>home</button></a></li>
                 <li>
                     
                     <form action="{{ route('profile')}}" method="GET">

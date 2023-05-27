@@ -1,5 +1,5 @@
 @include ('layout.header')
-
+<title>Profile</title>
 
 
 <div class="profile">
@@ -8,9 +8,16 @@
 
     <div class="bio">
 
-        <p> {{ Auth::user()->bio->bio }} </p>
+        @if ( Auth::user()->bio ){
 
-        <button>Edit bio</button>
+            <p> {{ Auth::user()->bio->bio }}</p>
+            <button>Edit bio</button>
+        }
+            
+        @else
+            <button>Create bio</button>
+        @endif
+
     </div>
 
     

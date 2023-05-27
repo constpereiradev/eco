@@ -6,7 +6,7 @@
 }
 
 .header {
-    height: 60px;
+    height: 80px;
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -16,29 +16,36 @@
 }
 
 .header .nav ul {
-    display: block;
     display: flex;
+    align-items: center;
+    justify-content: center;
+
     flex-direction: row;
+    width: 100vw;
 }
 
 .header .nav ul li {
     text-decoration: none;
     list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     margin: 20px 60px 20px 60px;
     color: white;
 }
 
-.header .nav ul li aside {
+.header .nav ul li a {
     text-decoration: none;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 20px 60px 20px 60px;
     color: white;
+    width: 80px;
+    height: 30px;
+}
+
+.header button {
+    width: 80px;
+    height: 30px;
+    background-color: palegoldenrod;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
 }
 
 .createpost {
@@ -116,14 +123,24 @@
     flex-direction: column;
 
     width: 60%;
-    height: 100px;
+    height: 120px;
     border-radius: 10px;
 
     color: black;
     border: solid grey 1px;
     margin: 10px;
-    padding: 20px;
 
+}
+
+.user-post button {
+
+    width: 120px;
+    height: 30px;
+    background-color: palegoldenrod;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
 }
 
 .profile {
@@ -162,4 +179,62 @@
     transition: 0.5s;
     background-color: rgb(59, 59, 59);
 
+}
+
+#date {
+    font-size: 14px;
+}
+
+/* login */
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-form {
+    padding: 20px;
+    width: 400px;
+}
+
+.login h2 {
+    margin-bottom: 80px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    font-size: 16px;
+}
+
+.login .login-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-form .text-danger {
+    color: red;
+}
+
+a {
+    color: black;
+}
+
+.login-alert {
+    font-size: 14px;
+    color: grey;
 }

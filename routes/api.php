@@ -24,7 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(UserController::class)->group(function () {
 
     Route::get('users', 'index');
-    Route::post('user/create', 'store');
+    Route::post('user/create', 'store')->name('store.user');
     Route::get('user/{id}', 'show');
     Route::put('user/update/{id}', 'update');
     Route::delete('user/delete/{id}', 'destroy');
@@ -43,5 +43,5 @@ Route::controller(PostController::class)->group(function () {
     Route::put('user/{user_id}/post/update/{post_id}', 'update');
     Route::get('user/{user_id}/post/{post_id}', 'show');
     Route::delete('user/{user_id}/post/{post_id}/delete', 'destroy');
-
 }); 
+

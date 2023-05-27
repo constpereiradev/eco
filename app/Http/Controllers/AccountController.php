@@ -6,14 +6,54 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class AccountController extends Controller
 {
-    //login
+    
+    //register form
+    public function register(): View {
+        return view('register');
+    }
+        
+
+    //register and log in
+    public function createUser(Request $request){
+
+        $credentials = $request->validate([
+            'name' => ['required'],
+            'email' => ['email', 'required'],
+            'password' => ['required'],
+        ]);
+
+        $user = User::where('email', $credentials['email'])->first();
+
+        if ($user) {
+            
+            return redirect('/login')->with('message', 'Looks like you already have an account. Please, log in.');
+        }
+
+        $user = User::create($credentials);
+
+
+        if (Auth::attempt($credentials)) {
+
+            //user data
+            $user = Auth::user();
+
+            $request->session()->regenerate();
+            return redirect()->intended('/home')->with('user', $user);
+        }
+    }
+
+
+    //login form
     public function login(): View{
 
         return view('login');
     }
+
+    
 
     //auth
     public function authenticate(Request $request): RedirectResponse
@@ -52,13 +92,14 @@ class AccountController extends Controller
     
     }
 
+    //home
     public function home(){
 
         if(Auth::check())
         {
             return view('account.home');
         }else {
-            return 'you must log in first.';   
+            return view('login'); 
         }
         
     }
@@ -70,7 +111,7 @@ class AccountController extends Controller
         {
             return view('account.profile');
         }else {
-            return 'you must log in first.';   
+            return view('login'); 
         }
     }
 }

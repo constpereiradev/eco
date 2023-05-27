@@ -27,7 +27,7 @@ class PostController extends Controller
 
         if ($post->save()){
 
-            return redirect('home');
+            return back();
             
         } else {
 
@@ -117,6 +117,7 @@ class PostController extends Controller
     }
 
 
+    //api
     public function destroy(string $user_id, string $post_id){
 
         $user = User::find($user_id);
@@ -127,5 +128,19 @@ class PostController extends Controller
         $post->delete();
 
         return response()->json('Success!', 200);
+    }
+
+
+    //web
+    public function delete(string $user_id, string $post_id){
+
+        $user = User::find($user_id);
+        $post = Post::find($post_id);
+
+        $post = $user->posts()->find($post_id);
+
+        $post->delete();
+
+        return back();
     }
 }
