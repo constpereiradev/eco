@@ -1,11 +1,11 @@
 
-# Laravel 10 crud api 
+# Eco
 <p align="center">
     <img src="images/api-logo.png" width="150" height="150">
 </p>
     
 ## About the project
-CRUD User API made with Laravel 10.
+Eco is a social media build with Laravel.
 
 
 # Releases
@@ -42,11 +42,11 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/constpereiradev/laravel10-crud-api.git
+   git clone https://github.com/constpereiradev/eco.git
    ```
 2. Go to my Postman Workspace and use the endpoints
    ```sh
-   https://www.postman.com/martian-firefly-354203/workspace/laravel-10-crud-api
+   https://www.postman.com/martian-firefly-354203/workspace/eco
    ```
 3. Start Php artisan serve
    ```sh
