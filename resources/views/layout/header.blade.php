@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/app.css">
+    <title>Eco</title>
+
 </head>
 <body>
     <header class="header">
         <div class="nav">
             <ul>
+                <li><button>ECO</button></li>
                 <li><a href="home"><button>home</button></a></li>
                 <li>
                     
@@ -17,7 +20,7 @@
 
                         @csrf
                     
-                        <button type="submit">Perfil</button>
+                        <button type="submit">profile</button>
                     
                     </form>
                 
@@ -28,7 +31,7 @@
                     <form action="{{ route ('logout')}}" method="post">
                         @csrf
                        
-                        <button type="submit">Logout</button>
+                        <button type="submit">logout</button>
                     </form>
                 
                 </li>

@@ -5,6 +5,7 @@
 
 }
 
+
 .header {
     height: 80px;
     display: flex;
@@ -13,15 +14,19 @@
     align-items: center;
     justify-content: space-between;
     background-color: black;
+    width: 100%;
+
+    position: static;
 }
 
 .header .nav ul {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 
     flex-direction: row;
-    width: 100vw;
+    width: 100%;
+
 }
 
 .header .nav ul li {
@@ -41,11 +46,13 @@
 .header button {
     width: 80px;
     height: 30px;
-    background-color: palegoldenrod;
-    color: black;
+    background-color: black;
+    color: white;
     border-radius: 10px;
     border: none;
     margin-top: 10px;
+
+    cursor: pointer;
 }
 
 .createpost {
@@ -100,6 +107,7 @@
     color: white;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
 }
 
 .createpost .post button:hover {
@@ -141,10 +149,12 @@
     border-radius: 10px;
     border: none;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .profile {
-    background-color: grey;
+    background-color: black;
+    color: white;
     width: 100%;
     height: 50vh;
 
@@ -173,6 +183,9 @@
     color: white;
     border-radius: 10px;
     border: none;
+    border: solid white 0.5px;
+
+    cursor: pointer;
 }
 
 .bio button:hover {
@@ -183,6 +196,13 @@
 
 #date {
     font-size: 14px;
+}
+
+.bio input[type="text"] {
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
 }
 
 /* login */
@@ -223,6 +243,8 @@
     color: #fff;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
+
     cursor: pointer;
 }
 

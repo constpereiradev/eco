@@ -1,5 +1,5 @@
 @include('layout.header')
-<title>Home</title>
+<title>Eco</title>
 
 @include('layout.createpost')
 @include('layout.post')

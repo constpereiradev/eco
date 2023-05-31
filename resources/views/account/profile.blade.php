@@ -1,5 +1,4 @@
 @include ('layout.header')
-<title>Profile</title>
 
 
 <div class="profile">
@@ -15,7 +14,11 @@
         }
             
         @else
-            <button>Create bio</button>
+
+                <input type="text" name="bio" id="bio-input">
+                <button id="bio-button">Create Bio</button>
+
+
         @endif
 
     </div>
@@ -26,3 +29,4 @@
 @include ('layout.createpost')
 
 @include ('layout.post-profile')
+@include ('layout.javascript')
