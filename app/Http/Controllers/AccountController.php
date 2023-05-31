@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Post;
 
 class AccountController extends Controller
 {
@@ -95,9 +96,14 @@ class AccountController extends Controller
     //home
     public function home(){
 
+
         if(Auth::check())
         {
-            return view('account.home');
+
+            $posts = Post::all();
+            $users = User::all();
+
+            return view('account.home')->with('posts', $posts)->with('users', $users);
         }else {
             return view('login'); 
         }

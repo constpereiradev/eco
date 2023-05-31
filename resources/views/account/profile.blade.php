@@ -25,4 +25,4 @@
 
 @include ('layout.createpost')
 
-@include ('layout.post')
+@include ('layout.post-profile')
